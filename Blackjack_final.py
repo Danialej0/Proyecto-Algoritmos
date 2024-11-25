@@ -93,13 +93,6 @@ class Historial:
             current = current.next
         return records
 
-class NodoProbabilidad:
-    def __init__(self, hand_value, deck_remaining):
-        self.hand_value = hand_value
-        self.deck_remaining = deck_remaining
-        self.win_probability = 0.0
-        self.children = []
-
 class ArbolProbabilidad:
     def __init__(self):
         self.card_values = {
@@ -185,7 +178,7 @@ class Blackjack:
         self.card_fotos = self.cargar_Imagen()
         self.historial = Historial()
 
-        # Game variables
+        # variables
         self.deck = Deck()
         self.player_hand = Hand()
         self.dealer_hand = Hand()
@@ -225,7 +218,7 @@ class Blackjack:
         self.player_frame = tk.Frame(self.table_frame, bg="#2a7b4f", relief=tk.GROOVE, bd=3)
         self.player_frame.pack(side="bottom", pady=20)
 
-        # --- Buttons --- #
+        # botones
         self.button_frame = tk.Frame(self.root, bg="#004d26", pady=10)
         self.button_frame.pack(fill="x")
 
